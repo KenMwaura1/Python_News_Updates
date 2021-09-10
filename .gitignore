@@ -9,6 +9,9 @@ __pycache__/
 
 #ide local_settings
 .idea/
+# venv
+venv/
+
 
 
 # Distribution / packaging
