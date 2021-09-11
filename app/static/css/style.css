@@ -1,12 +1,26 @@
 html {
-    overflow: hidden;
+    ;
 }
 nav {
     padding-bottom: 2em;
     margin-bottom: 2em;
 }
-.card-deck {
-    margin-top:2em;
-    padding-top: 50px;
-    border: 5px blueviolet solid;
+h2 {
+    padding: 20px;
+}
+.source-card{
+
+}
+#source-name{
+    font-family: 'Livvic', sans-serif;
+    font-weight: bold;
+
+}
+#source-name a:hover{
+    text-decoration: none;
+    font-weight: bolder;
+}
+.desc{
+
+    font-size:18px;
 }
