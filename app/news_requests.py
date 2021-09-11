@@ -1,6 +1,6 @@
 import requests
 
-from models import Articles, NewsSources
+from .models import Articles, NewsSources
 
 news_sources_url = None
 news_articles_url = None
@@ -18,7 +18,7 @@ def request_config(app):
     news_sources_url = app.config.get('NEWS_SOURCES_URL')
     news_articles_url = app.config.get('NEWS_ARTICLES_APL_URL')
     news_base_url = app.config.get('NEWS_API_BASE_URL')
-    api_key = app.config.get('api_key')
+    api_key = app.config.get('API_KEY')
 
 
 def process_articles_response(list_articles):
@@ -62,4 +62,42 @@ def get_articles(article):
     return list_of_articles
 
 
-def
+def process_sources_response(list_sources):
+    """
+    function to process news sources
+    :param list_sources:
+    :return: list of news sources
+    """
+    list_of_sources = []
+    for source in list_sources:
+        id = source.get("id")
+        name = source.get("name")
+        description = source.get("description")
+        url = source.get("url")
+        category = source.get("category")
+        language = source.get("language")
+        country = source.get("country")
+
+        new_source = NewsSources(id, name, description, url, category, language, country)
+        list_of_sources.append(new_source)
+
+    return list_of_sources
+
+
+def get_news_sources(category):
+    """
+    function to retrieve news sources from the News Api
+    :param category:
+    :return: list of news sources
+    """
+    print(api_key)
+    sources_url = news_sources_url.format(category, api_key)
+
+    with requests.get(sources_url) as url:
+        sources_response = url.json()
+
+        list_of_sources = None
+        if sources_response['sources']:
+            list_of_sources = process_sources_response(sources_response['sources'])
+
+    return list_of_sources
