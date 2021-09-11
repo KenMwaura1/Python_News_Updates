@@ -1,10 +1,17 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+
 class Config:
     """
     Base class for general configuration settings
     """
+    API_KEY = os.getenv('API_KEY')
     NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?country={}&apiKey={}'
     NEWS_ARTICLES_APL_URL = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
-    NEWS_SOURCE_ARTICLES_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey='
+    NEWS_SOURCES_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey='
 
 
 class DevConfig(Config):
