@@ -1,0 +1,63 @@
+{% macro show_news_sources(list_of_sources) %}
+    <div class="container-fluid">
+        <div class="card-columns">
+            {% for source in list_of_sources %}
+                <div class="card source-card view view-cascade gradient-card-header peach-gradient">
+                    <div class="card-header card-header-title mb-3" id="source-name" >
+                        <h4><a href="/articles/{{source.id}}">{{source.name}}</a></h4>
+                    </div>
+
+                    <div class="card-body card-body-cascade text-center heavy-rain-gradient">
+                        <p class="desc">
+                            {{source.description}}
+                        </p>
+                        <a href="/articles/{{source.id}}"><button class="btn btn-sm rounded-pill blue-gradient">Read Articles</button> </a>
+                        <a href="{{source.url}}"><button class="btn btn-sm rounded-pill purple-gradient" id="visit">Visit {{source.name}}</button></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endmacro %}
+{% macro test(t1) %}
+    <div class="row row-cols-1 row-cols-md-3 card-deck ">
+
+        <div class="card mb-4">
+            <!-- Card -->
+            {% for source in list_of_sources %}
+                <div class="card card-cascade wider h-100">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade gradient-card-header peach-gradient">
+
+                        <!-- Title -->
+                        <h2 class="card-header-title mb-3">{{ source.name }}</h2>
+                        <!-- Text -->
+                        <p class="mb-0"><i class="fas fa-calendar mr-2"></i>{{ source.category }}</p>
+
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
+
+                        <!-- Text -->
+                        <p class="card-text">{{ source.description }}</p>.
+                        <!-- Link -->
+                        <a href="/articles/{{ source.id }}" class="orange-text d-flex flex-row-reverse p-2">
+                            <h5 class="waves-effect waves-light">Read more from {{ source.name }}<i class="fas fa-angle-double-right ml-2"></i></h5>
+                        </a>
+                        <a href="/articles/{{ source.url }}" class="orange-text d-flex flex-row-reverse p-2">
+                            <h5 class="waves-effect waves-light">Visit {{ source.name }}<i class="fas fa-angle-double-right ml-2"></i></h5>
+                        </a>
+
+                    </div>
+                    <!-- Card content -->
+                </div>
+
+                </div>
+            {% endfor %}
+    </div>
+
+{% endmacro %}
