@@ -9,9 +9,14 @@ def create_app(config_name):
     :param config_name:
     :return:
     """
-    app = Flask(__name__, )
+    # register app
+    app = Flask(__name__)
     app.config.from_object(config_options[config_name])
+    # register blueprint
     from .main import main
     app.register_blueprint(main)
+    # register the request
+    from .news_requests import request_config
+    request_config(app)
 
     return app
