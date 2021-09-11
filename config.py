@@ -11,7 +11,7 @@ class Config:
     API_KEY = os.getenv('API_KEY')
     NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?country={}&apiKey={}'
     NEWS_ARTICLES_APL_URL = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
-    NEWS_SOURCES_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey='
+    NEWS_SOURCES_URL = 'https://newsapi.org/v2/top-headlines/sources?category={}&apiKey={}'
 
 
 class DevConfig(Config):
