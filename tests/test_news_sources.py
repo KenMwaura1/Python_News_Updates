@@ -16,6 +16,13 @@ class SourcesTest(unittest.TestCase):
         self.new_source = NewsSources('techcrunch', 'TechCrunch', self.description,
                                       "https://techcrunch.com", "technology", "en", "us")
 
+    def tearDown(self) -> None:
+        """
+        method to cleanup new sources
+        :return: empty news sources
+        """
+        self.new_source = None
+
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source, NewsSources))
 
@@ -32,4 +39,3 @@ class SourcesTest(unittest.TestCase):
         self.assertTrue(self.new_source.category, "technology")
         self.assertTrue(self.new_source.language, "en")
         self.assertTrue(self.new_source.country, "us")
-
