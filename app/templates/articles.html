@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% import 'news_macros.html' as macro%}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="overlay container-fluid">
+            <h2 class="text-center font-weight-bold h1">Technology Articles</h2>
+            {{macro.show_new_articles(tech)}}
+            <h2 class="text-center font-weight-bold h1" > Science Articles </h2>
+            {{ macro.show_new_articles(science) }}
+
+            <h2 class="text-center font-weight-bold h1" >Health News Articles</h2>
+            {{macro.show_new_articles(health)}}
+        </div>
+    </div>
+{% endblock %}

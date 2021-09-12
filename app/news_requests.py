@@ -60,8 +60,8 @@ def get_articles(article):
         print(articles_response)
 
         list_of_articles = None
-        if articles_response['results']:
-            list_of_articles = process_articles_response(articles_response['results'])
+        if articles_response['articles']:
+            list_of_articles = process_articles_response(articles_response['articles'])
 
     return list_of_articles
 

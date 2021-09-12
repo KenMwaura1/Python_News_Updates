@@ -62,7 +62,7 @@
 
 {% endmacro %}
 {% macro show_news_sources_article(source_articles) %}
-    <!-- Card deck -->
+    <!-- Card -->
     <div class="row main-card card-cascade narrower row-cols-1 row-cols-md-4">
         {% for article in source_articles %}
         <!-- Card -->
@@ -81,12 +81,13 @@
             <div class="card-body">
 
                 <!--Title-->
-                <h4 class="card-title h6">{{ article.title | truncate(50) }}</h4>
+                <h4 class="card-title h6">{{ article.title | truncate(70) }}</h4>
                 <!--Text-->
                 <p class="card-text">{{ article.description }}</p>.
                 <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
 
-                <p class="disabled">Posted on: {{article.published_at | truncate(13) }} By: {{article.author}} </p>
+                <p class="disabled">Posted on: {{article.published_at | truncate(13) }} </p>
+                <p>By: {{article.author}} </p>
                 <a class="btn  btn-md rounded-pill blue-gradient" href="{{ article.url }}">Read more</a>
 
             </div>
@@ -96,7 +97,7 @@
         {% endfor %}
 
     </div>
-    <!-- Card deck -->
+    <!-- Card  -->
 
 {% endmacro %}
 {% macro show_all_news_source(list_of_all_sources) %}
@@ -109,7 +110,7 @@
             <th scope="col">Description</th>
             <th scope="col">Category</th>
             <th scope="col"> Country </th>
-            <th scope="col">url</th>
+            <th scope="col">Url</th>
         </tr>
         </thead>
         <tbody>
@@ -123,8 +124,48 @@
             <td> <a href="{{ source.url}}" class="blue-text underline">{{ source.url }} </a></td>
 
         </tr>
-        {% endfor %}S
+        {% endfor %}
 
         </tbody>
     </table>
+{% endmacro %}
+
+{% macro show_new_articles(list_of_articles) %}
+    <!-- Card -->
+    <div class="row main-card card-cascade narrower row-cols-1 row-cols-md-4">
+        {% for article in list_of_articles %}
+            <!-- Card -->
+            <div class="card col mb-4 ">
+
+                <!--Card image-->
+                <div class="view overlay">
+                    <img class="card-img-top" src="{{ article.url_to_image }}"
+                         alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <!--Title-->
+                    <h4 class="card-title h6">{{ article.title | truncate(70) }}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{ article.description }}</p>.
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+
+                    <p class="disabled">Posted on: {{article.published_at | truncate(13) }} </p>
+                    <p>By: {{article.author}} </p>
+                    <a class="btn  btn-md rounded-pill blue-gradient" href="{{ article.url }}">Read more</a>
+
+                </div>
+
+            </div>
+            <!-- Card -->
+        {% endfor %}
+
+    </div>
+    <!-- Card  -->
+
 {% endmacro %}

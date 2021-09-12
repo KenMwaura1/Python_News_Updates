@@ -29,6 +29,16 @@ def news_source_articles(id):
     all_source_articles = get_news_sources_articles(id)
     return render_template("article-sources.html", source=source, all_source_articles=all_source_articles)
 
+@main.route('/News-Articles')
+def news_articles():
+    """
+    function to render new articles
+    :return: template with new articles
+    """
+    tech = get_articles('technology')
+    science = get_articles('science')
+    health = get_articles('health')
+    return render_template("articles.html",tech=tech,science=science,health=health)
 
 @main.route('/News-Sources')
 def news_sources():
