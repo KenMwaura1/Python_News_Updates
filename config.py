@@ -12,6 +12,8 @@ class Config:
     NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?country={}&apiKey={}'
     NEWS_ARTICLES_APL_URL = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
     NEWS_SOURCES_URL = 'https://newsapi.org/v2/top-headlines/sources?category={}&apiKey={}'
+    NEWS_SOURCES_ARTICLES_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+    ALL_NEWS_SOURCES = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
 
 
 class DevConfig(Config):
