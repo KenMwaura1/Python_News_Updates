@@ -1,7 +1,10 @@
-
 from app import create_app
+from config import config_options
+from commands import config_app
+
 
 app = create_app('development')
 
-if __name__ == '__main__':
-    app.run(port=6890, host='localhost')
+app.config.from_object(config_options['development'])
+config_app(app)
+

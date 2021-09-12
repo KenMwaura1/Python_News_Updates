@@ -66,6 +66,4 @@ def search_article(article_search: str):
     search_term = article_search.split(" ")
     search_term_format = "+".join(search_term)
     search_results = search_articles(search_term_format)
-    for s in search_results:
-        print(s.title)
     return render_template("search_results.html", search_results=search_results)
