@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% import 'news_macros.html' as macro %}
+
+{% block content %}
+    <div class="container-fluid" id="all-sources">
+        <div class="overlay">
+            {{ macro.show_news_sources_article(all_source_articles)}}
+        </div>
+
+    </div>
+{% endblock %}
