@@ -26,6 +26,7 @@ This is a flask application that will help people list and preview news articles
 ![screenshot of app running](app/static/images/Screenshot_113.png)
 
 ## Live Site
+[link to deployed site](https://zoo-news.herokuapp.com/)
 
 ## Setup Instructions / Installation
 ### Getting Started

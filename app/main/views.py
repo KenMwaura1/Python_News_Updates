@@ -29,6 +29,10 @@ def news_source_articles(id):
     :param id:
     :return: template with source articles
     """
+    search = request.args.get('article-query')
+    if search:
+        return redirect(url_for('main.search_article', article_search=search))
+
     source = id
     all_source_articles = get_news_sources_articles(id)
     return render_template("article-sources.html", source=source, all_source_articles=all_source_articles)
@@ -40,6 +44,10 @@ def news_articles():
     function to render new articles
     :return: template with new articles
     """
+    search = request.args.get('article-query')
+    if search:
+        return redirect(url_for('main.search_article', article_search=search))
+
     tech = get_articles('technology')
     science = get_articles('science')
     health = get_articles('health')
@@ -52,6 +60,10 @@ def news_sources():
     function to display all news sources
     :return: template of news sources
     """
+    search = request.args.get('article-query')
+    if search:
+        return redirect(url_for('main.search_article', article_search=search))
+
     all_news_sources = get_all_sources()
     return render_template("news_sources.html", all_news_sources=all_news_sources)
 
