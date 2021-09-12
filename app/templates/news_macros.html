@@ -169,3 +169,43 @@
     <!-- Card  -->
 
 {% endmacro %}
+
+{% macro show_search_articles(article_results) %}
+    <!-- Card -->
+    <div class="row main-card card-cascade narrower row-cols-1 row-cols-md-4">
+        {% for article in article_results %}
+            <!-- Card -->
+            <div class="card col mb-4 ">
+
+                <!--Card image-->
+                <div class="view overlay">
+                    <img class="card-img-top" src="{{ article.url_to_image }}"
+                         alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <!--Title-->
+                    <h4 class="card-title h6">{{ article.title | truncate(70) }}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{ article.description }}</p>.
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+
+                    <p class="disabled">Posted on: {{article.published_at | truncate(13) }} </p>
+                    <p>By: {{article.author}} </p>
+                    <a class="btn  btn-md rounded-pill blue-gradient" href="{{ article.url }}">Read more</a>
+
+                </div>
+
+            </div>
+            <!-- Card -->
+        {% endfor %}
+
+    </div>
+    <!-- Card  -->
+
+{% endmacro %}
