@@ -8,3 +8,5 @@ app = create_app('development')
 app.config.from_object(config_options['development'])
 config_app(app)
 
+if __name__ == '__main__':
+    app.run()

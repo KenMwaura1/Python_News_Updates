@@ -8,7 +8,7 @@ class Config:
     """
     Base class for general configuration settings
     """
-    API_KEY = os.getenv('API_KEY')
+    API_KEY = os.environ.get('API_KEY')
     NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?country={}&apiKey={}'
     NEWS_ARTICLES_APL_URL = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
     NEWS_SOURCES_URL = 'https://newsapi.org/v2/top-headlines/sources?category={}&apiKey={}'
