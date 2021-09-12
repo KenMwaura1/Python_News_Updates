@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% import 'news_macros.html' as macro %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h3 class="h3">Results Found: {{ search_results | count }}</h3>
+        {{ macro.show_new_articles(search_results) }}
+
+    </div>
+
+{% endblock %}

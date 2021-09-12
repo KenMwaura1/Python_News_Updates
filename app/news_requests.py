@@ -57,7 +57,6 @@ def get_articles(article):
     articles_url = news_articles_url.format(article, api_key)
     with requests.get(articles_url) as url:
         articles_response = url.json()
-        print(articles_response)
 
         list_of_articles = None
         if articles_response['articles']:
@@ -94,7 +93,6 @@ def get_news_sources(category):
     :param category:
     :return: list of news sources
     """
-    print(api_key)
     sources_url = news_sources_url.format(category, api_key)
 
     with requests.get(sources_url) as url:
@@ -125,7 +123,7 @@ def process_all_sources_response(list_of_all_sources):
 
         new_source = NewsSources(id, name, description, url, category, language, country)
         sources_list.append(new_source)
-        # print(sources_list)
+
 
     return sources_list
 
@@ -165,7 +163,6 @@ def process_news_articles(list_of_news_articles):
 
         new_article = Articles(source, author, title, description, url, url_to_image, published_at)
         source_articles.append(new_article)
-        print(description)
 
     return source_articles
 
@@ -195,7 +192,21 @@ def process_search_response(search_results):
     :param search_results:
     :return:
     """
-    pass
+    list_of_results = []
+    for article in search_results:
+        source = article.get("source")
+        author = article.get("author")
+        description = article.get("description")
+        title = article.get("title")
+        url = article.get("url")
+        url_to_image = article.get("urlToImage")
+        published_at = article.get("publishedAt")
+
+        new_article = Articles(source, author, title,
+                               description, url, url_to_image, published_at)
+        list_of_results.append(new_article)
+
+    return list_of_results
 
 
 def search_articles(search_term):
@@ -212,4 +223,5 @@ def search_articles(search_term):
         search_results = None
         if search_response['articles']:
             search_results = process_search_response(search_response['articles'])
+
     return search_results
