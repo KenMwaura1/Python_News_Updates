@@ -1,0 +1,33 @@
+# Python related code
+
+*.py @KenMwaura1
+
+# Java Script related code
+
+*.tsx @KenMwaura1
+*.ts @KenMwaura1
+*.cjs @KenMwaura1
+
+# HTML & CSS related code
+
+*.html @KenMwaura1
+*.css @KenMwaura1
+*.scss @KenMwaura1
+
+# JSON related code
+
+*.json @KenMwaura1
+
+# DevOps related code
+
+*.yml @KenMwaura1
+*.yaml @KenMwaura1
+
+# Terraform
+
+*.tf @KenMwaura1
+
+# Docker related code
+
+Dockerfile @KenMwaura1
+*.prod @KenMwaura1
