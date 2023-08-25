@@ -9,4 +9,5 @@ def error_handler(error):
     :param error:
     :return: 404 error page
     """
+    print(error)
     return render_template('404.html'), 404
