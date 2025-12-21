@@ -21,7 +21,7 @@ oslo.i18n==6.0.0
 oslo.serialization==1.11.0
 oslo.utils==6.2.0
 packaging==23.1
-pbr==1.8.1
+pbr==7.0.3
 pyinotify==0.9.6
 pyparsing==3.1.1
 python-dotenv==0.19.0
