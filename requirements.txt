@@ -4,7 +4,7 @@ charset-normalizer==3.4.4
 click==8.1.8
 debtcollector==2.5.0
 decorator==5.2.1
-Flask==2.2.5
+Flask==3.1.2
 gensim==4.4.0
 gunicorn==23.0.0
 idna==3.11
