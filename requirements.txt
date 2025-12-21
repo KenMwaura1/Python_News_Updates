@@ -19,7 +19,7 @@ netifaces==0.10.4
 numpy==1.24.4
 oslo.i18n==6.0.0
 oslo.serialization==1.11.0
-oslo.utils==6.2.0
+oslo.utils==9.1.0
 packaging==23.1
 pbr==1.8.1
 pyinotify==0.9.6
