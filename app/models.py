@@ -23,7 +23,7 @@ class Articles:
         self.published_at = published_at
 
 
-class NewsSources():
+class NewsSources:
     """
     class to model News Sources objects
     """

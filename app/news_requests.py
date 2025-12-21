@@ -124,7 +124,6 @@ def process_all_sources_response(list_of_all_sources):
         new_source = NewsSources(id, name, description, url, category, language, country)
         sources_list.append(new_source)
 
-
     return sources_list
 
 
