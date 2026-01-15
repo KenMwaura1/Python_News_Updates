@@ -34,9 +34,9 @@ scipy==1.16.3
 self==2020.12.3
 setuptools==80.9.0
 six==1.10.0
-smart-open==5.2.1
+smart-open==7.5.0
 stevedore==5.5.0
 tzdata==2023.3
 urllib3==2.6.2
-Werkzeug==3.1.4
-wrapt==2.0.1
+Werkzeug==3.1.5
+wrapt==1.10.5
