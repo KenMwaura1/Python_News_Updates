@@ -39,4 +39,4 @@ stevedore==5.5.0
 tzdata==2025.3
 urllib3==2.6.2
 Werkzeug==3.1.5
-wrapt==1.10.5
+wrapt==2.1.1
