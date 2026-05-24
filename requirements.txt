@@ -20,7 +20,7 @@ netaddr==1.3.0
 numpy==2.0.2
 oslo.i18n==6.6.0
 oslo.serialization==5.8.0
-oslo.utils==9.1.0
+oslo.utils==10.0.1
 packaging==26.1
 pbr==7.0.3
 psutil==7.2.2
@@ -34,8 +34,8 @@ scipy==1.16.3
 self==2020.12.3
 setuptools==82.0.1
 six==1.17.0
-smart-open==7.6.0
-stevedore==5.5.0
+smart-open==7.5.0
+stevedore==5.7.0
 tzdata==2026.1
 urllib3==2.6.3
 Werkzeug==3.1.8
