@@ -21,7 +21,7 @@ numpy==2.0.2
 oslo.i18n==6.7.2
 oslo.serialization==5.8.0
 oslo.utils==10.0.1
-packaging==26.1
+packaging==26.2
 pbr==7.0.3
 psutil==7.2.2
 pyinotify==0.9.6
